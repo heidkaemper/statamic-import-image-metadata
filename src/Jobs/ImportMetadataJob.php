@@ -9,8 +9,6 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Heidkaemper\ImportImageMetadata\Importer;
 
-use Illuminate\Support\Facades\Log;
-
 class ImportMetadataJob implements ShouldQueue
 {
     use Dispatchable;

@@ -6,9 +6,6 @@ use Statamic\Events\AssetUploaded;
 use Statamic\Events\AssetReuploaded;
 use Statamic\Providers\AddonServiceProvider;
 use Heidkaemper\ImportImageMetadata\Listeners\AssetUploadedListener;
-use Heidkaemper\ImportImageMetadata\Listeners\AssetReuploadedListener;
-
-use Heidkaemper\ImportImageMetadata\Jobs\ImportMetadataJob;
 
 class ServiceProvider extends AddonServiceProvider
 {
@@ -21,14 +18,14 @@ class ServiceProvider extends AddonServiceProvider
         ],
     ];
 
-    public function boot()
+    public function boot(): void
     {
         parent::boot();
 
         $this->bootAddonConfig();
     }
 
-    protected function bootAddonConfig()
+    protected function bootAddonConfig(): self
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/import-image-metadata.php', 'statamic.import-image-metadata');
 

@@ -4,7 +4,7 @@ namespace Heidkaemper\ImportImageMetadata\Helpers;
 
 class Formatter
 {
-    const IPTC_TAGS = [
+    public const IPTC_TAGS = [
         '2#005' => 'title',
         '2#055' => 'date',
         '2#080' => 'author',
@@ -18,14 +18,14 @@ class Formatter
         '2#120' => 'caption',
     ];
 
-    static function exif(array $data): array
+    public static function exif(array $data): array
     {
         $data = array_filter($data, fn ($value) => is_string($value) && ! empty($value));
 
         return array_change_key_case($data, CASE_LOWER);
     }
 
-    static function iptc(array $data): array
+    public static function iptc(array $data): array
     {
         $data = array_map(fn ($value) => is_array($value) && isset($value[0]) ? $value[0] : $value, $data);
 

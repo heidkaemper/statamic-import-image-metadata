@@ -64,7 +64,7 @@ class Importer
 
     private function findMetadataBySources(string $sources): string|null
     {
-        foreach(explode(',', $sources) as $source) {
+        foreach (explode(',', $sources) as $source) {
             $source = mb_strtolower(trim($source));
 
             $value = Arr::get($this->metadata, $source);
