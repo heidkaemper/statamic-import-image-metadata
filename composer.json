@@ -1,0 +1,38 @@
+{
+    "name": "heidkaemper/statamic-import-image-metadata",
+    "license": "MIT",
+    "type": "statamic-addon",
+    "description": "Read EXIF/IPTC Metadata when an image is uploaded to Statamic",
+    "authors": [
+        {
+            "name": "Lars Heidkämper",
+            "homepage": "https://github.com/heidkaemper"
+        }
+    ],
+    "require": {
+        "statamic/cms": "~3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Heidkaemper\\ImportImageMetadata\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Import Image Metadata",
+            "description": "Read EXIF/IPTC Metadata when an image is uploaded to Statamic"
+        },
+        "laravel": {
+            "providers": [
+                "Heidkaemper\\ImportImageMetadata\\ServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
