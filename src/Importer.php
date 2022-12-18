@@ -8,22 +8,23 @@ use Heidkaemper\ImportImageMetadata\Helpers\Formatter;
 
 class Importer
 {
+    protected array $metadata = [
+        'exif' => [],
+        'iptc' => [],
+    ];
+
+    protected bool $hasDirtyData = false;
+
     public function __construct(
         public Asset $asset,
     ) {
-        $this->metadata = [
-            'exif' => [],
-            'iptc' => [],
-        ];
-
         $this->readExif();
         $this->readIptc();
         $this->mapToAssetField();
-
-        $this->asset->save();
+        $this->save();
     }
 
-    private function readExif(): void
+    public function readExif(): void
     {
         $data = exif_read_data($this->asset->resolvedPath());
 
@@ -34,7 +35,7 @@ class Importer
         $this->metadata['exif'] = Formatter::exif($data);
     }
 
-    private function readIptc(): void
+    public function readIptc(): void
     {
         getimagesize($this->asset->resolvedPath(), $fileinfo);
 
@@ -47,7 +48,7 @@ class Importer
         $this->metadata['iptc'] = Formatter::iptc($data);
     }
 
-    private function mapToAssetField(): void
+    public function mapToAssetField(): void
     {
         $blueprint = $this->asset->container->blueprint();
 
@@ -58,11 +59,15 @@ class Importer
 
             $value = $this->findMetadataBySources($sources);
 
-            $this->asset->set($field, $value);
+            if ($value) {
+                $this->asset->set($field, $value);
+
+                $this->hasDirtyData = true;
+            }
         }
     }
 
-    private function findMetadataBySources(string $sources): string|null
+    public function findMetadataBySources(string $sources): string|null
     {
         foreach (explode(',', $sources) as $source) {
             $source = mb_strtolower(trim($source));
@@ -75,5 +80,16 @@ class Importer
         }
 
         return null;
+    }
+
+    public function save(): void
+    {
+        if (! $this->hasDirtyData) {
+            return;
+        }
+
+        $this->asset->saveQuietly();
+
+        $this->hasDirtyData = false;
     }
 }
