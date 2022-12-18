@@ -2,11 +2,11 @@
 
 ![Banner](./banner.png)
 
-# Import Image Metadata
+## Statamic CMS - Metadata Import
 
 <!-- /statamic:hide -->
 
-Read EXIF and IPTC metadata when uploading an image to Statamic.
+> Read EXIF and IPTC metadata when uploading an image to Statamic.
 
 ## Installation
 
