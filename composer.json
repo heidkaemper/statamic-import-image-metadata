@@ -30,7 +30,7 @@
     },
     "extra": {
         "statamic": {
-            "name": "Import Image Metadata",
+            "name": "Image Metadata Importer",
             "description": "Read EXIF and IPTC metadata when uploading an image to Statamic"
         },
         "laravel": {
