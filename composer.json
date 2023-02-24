@@ -3,30 +3,28 @@
     "license": "MIT",
     "type": "statamic-addon",
     "description": "Read EXIF and IPTC metadata when uploading an image to Statamic",
-    "authors": [
-        {
-            "name": "Lars Heidkämper",
-            "homepage": "https://github.com/heidkaemper"
-        }
-    ],
     "require": {
-        "php": "^8.0",
-        "statamic/cms": "~3.3"
+        "statamic/cms": "~3.3.0 || ~3.4.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.14",
-        "phpunit/phpunit": "^9.5",
-        "orchestra/testbench": "^7.16"
-    },
-    "scripts": {
-        "phpcs": "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --allow-risky=yes --dry-run --verbose --diff",
-        "phpcs:fix": "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --allow-risky=yes",
-        "test": "vendor/bin/phpunit"
+        "orchestra/testbench": "^7.16",
+        "pestphp/pest": "^1.22"
     },
     "autoload": {
         "psr-4": {
             "Heidkaemper\\ImportImageMetadata\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Heidkaemper\\ImportImageMetadata\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "phpcs": "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --allow-risky=yes --dry-run --verbose --diff",
+        "phpcs:fix": "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --allow-risky=yes",
+        "test": "vendor/bin/pest"
     },
     "extra": {
         "statamic": {
@@ -41,7 +39,8 @@
     },
     "config": {
         "allow-plugins": {
-            "pixelfear/composer-dist-plugin": true
+            "pixelfear/composer-dist-plugin": true,
+            "pestphp/pest-plugin": true
         }
     },
     "minimum-stability": "dev",
