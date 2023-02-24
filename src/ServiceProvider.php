@@ -2,10 +2,10 @@
 
 namespace Heidkaemper\ImportImageMetadata;
 
-use Statamic\Events\AssetUploaded;
-use Statamic\Events\AssetReuploaded;
-use Statamic\Providers\AddonServiceProvider;
 use Heidkaemper\ImportImageMetadata\Listeners\AssetUploadedListener;
+use Statamic\Events\AssetReuploaded;
+use Statamic\Events\AssetUploaded;
+use Statamic\Providers\AddonServiceProvider;
 
 class ServiceProvider extends AddonServiceProvider
 {

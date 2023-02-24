@@ -2,9 +2,9 @@
 
 namespace Heidkaemper\ImportImageMetadata;
 
-use Statamic\Assets\Asset;
-use Illuminate\Support\Arr;
 use Heidkaemper\ImportImageMetadata\Helpers\Formatter;
+use Illuminate\Support\Arr;
+use Statamic\Assets\Asset;
 
 class Importer
 {
