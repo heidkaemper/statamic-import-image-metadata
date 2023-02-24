@@ -1,4 +1,12 @@
-vendor
-composer.lock
-.phpunit.result.cache
-.php-cs-fixer.cache
+/.idea
+/.php-cs-fixer.cache
+/.phpunit.result.cache
+/composer.lock
+/node_modules
+/package-lock.json
+/vendor
+/yarn.lock
+/yarn-error.log
+.DS_*
+.env
+mix-manifest.json
