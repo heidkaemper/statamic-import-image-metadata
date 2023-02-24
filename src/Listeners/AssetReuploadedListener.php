@@ -2,8 +2,8 @@
 
 namespace Heidkaemper\ImportImageMetadata\Listeners;
 
-use Statamic\Events\AssetUploaded;
 use Heidkaemper\ImportImageMetadata\Jobs\ImportMetadataJob;
+use Statamic\Events\AssetUploaded;
 
 class AssetReuploadedListener
 {

@@ -2,12 +2,12 @@
 
 namespace Heidkaemper\ImportImageMetadata\Jobs;
 
-use Statamic\Assets\Asset;
+use Heidkaemper\ImportImageMetadata\Importer;
 use Illuminate\Bus\Queueable;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Heidkaemper\ImportImageMetadata\Importer;
+use Illuminate\Queue\InteractsWithQueue;
+use Statamic\Assets\Asset;
 
 class ImportMetadataJob implements ShouldQueue
 {

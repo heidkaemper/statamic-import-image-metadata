@@ -17,9 +17,9 @@ return [
     */
 
     'fields' => [
-        'title'     => 'exif.imagedescription, iptc.title',
+        'title' => 'exif.imagedescription, iptc.title',
         'copyright' => 'exif.copyright, iptc.copyright',
-        'source'    => 'iptc.source',
+        'source' => 'iptc.source',
     ],
 
     /*
