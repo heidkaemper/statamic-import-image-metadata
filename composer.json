@@ -4,7 +4,7 @@
     "type": "statamic-addon",
     "description": "Read EXIF and IPTC metadata when uploading an image to Statamic",
     "require": {
-        "statamic/cms": "~3.3.0 || ~3.4.0"
+        "statamic/cms": "^3.3 || ^4.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.14",
