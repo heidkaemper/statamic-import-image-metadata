@@ -20,7 +20,7 @@ class Formatter
 
     public static function exif(array $data): array
     {
-        $data = array_filter($data, fn ($value) => is_string($value) && ! empty($value));
+        $data = array_filter($data, fn ($value) => !is_array($value) && ! empty($value));
 
         return array_change_key_case($data, CASE_LOWER);
     }
