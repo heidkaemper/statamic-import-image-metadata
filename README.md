@@ -47,7 +47,7 @@ To make the configuration a little easier, this plugin [maps the most important 
 
 ---
 
-<a href="https://statamic.com"><img src="https://img.shields.io/badge/Statamic-3.3+-FF269E?style=for-the-badge"></a>
+<a href="https://statamic.com"><img src="https://img.shields.io/badge/Statamic-4.0+-FF269E?style=for-the-badge"></a>
 <a href="https://packagist.org/packages/heidkaemper/statamic-import-image-metadata"><img src="https://img.shields.io/packagist/v/heidkaemper/statamic-import-image-metadata?style=for-the-badge"></a>
 
 <!-- /statamic:hide -->
