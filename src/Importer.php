@@ -67,7 +67,7 @@ class Importer
         }
     }
 
-    public function findMetadataBySources(string $sources): string|null
+    public function findMetadataBySources(string $sources): ?string
     {
         foreach (explode(',', $sources) as $source) {
             $source = mb_strtolower(trim($source));
